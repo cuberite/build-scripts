@@ -31,6 +31,10 @@ case $key in
 	BRANCH="$2"
 	shift
     ;;
+	-32|--force-32)
+	FORCE32="$2"
+	shift
+	;;
     *)
     ;;
 esac
@@ -48,7 +52,7 @@ export CUBERITE_BUILD_ID="$BUILDID"
 export CUBERITE_BUILD_DATETIME="`date`"
 
 # Build
-CXX=$CXXCOMP CC=$CCOMP cmake . -DNO_NATIVE_OPTIMIZATION=1 -DCMAKE_BUILD_TYPE=${COMPILEMODE^^}
+CXX=$CXXCOMP CC=$CCOMP cmake . -DNO_NATIVE_OPTIMIZATION=1 -DCMAKE_BUILD_TYPE=${COMPILEMODE^^} -DFORCE_32=${FORCE32^^}
 make
 
 # Package Server
