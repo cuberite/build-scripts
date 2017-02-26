@@ -56,9 +56,9 @@ CXX=$CXXCOMP CC=$CCOMP cmake . -DNO_NATIVE_OPTIMIZATION=1 -DCMAKE_BUILD_TYPE=${C
 make
 
 # Package Server
-mkdir Server/Licenses
-cp Install/ThirdPartyLicenses/* Server/Licenses/
+cp -r Install/ThirdPartyLicenses/ Server/
 cp CONTRIBUTORS Server/
 cp LICENSE Server/
+rm Server/delete_windows_service.cmd Server/hg Server/hg.supp Server/install_windows_service.cmd Server/Plugins/.gitignore Server/vg Server/vg.supp
 tar -cvzf Cuberite.tar.gz Server/*
 sha1sum Cuberite.tar.gz > Cuberite.tar.gz.sha1
