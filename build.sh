@@ -57,6 +57,14 @@ make
 
 # Package Server
 cd Server/
+
+# h: dereference (archive file/folder instead of symlink)
+# z: gzip (compress)
+# c: create
+# v: verbose
+# T: files-from (list of server files accepted for release archives)
+# f: file (output file location)
 tar -hzcv -T Install/UnixExecutables.list -f ../Cuberite.tar.gz
+
 cd ..
 sha1sum Cuberite.tar.gz > Cuberite.tar.gz.sha1
