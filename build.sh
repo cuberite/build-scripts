@@ -57,6 +57,7 @@ make
 
 # Package Server
 cd Server/
+echo Cuberite $CUBERITE_BUILD_SERIES_NAME-$CUBERITE_BUILD_ID > buildinfo.txt
 
 # h: dereference (archive file/folder instead of symlink)
 # z: gzip (compress)
